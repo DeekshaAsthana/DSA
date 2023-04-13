@@ -1,4 +1,4 @@
-def nextSmallerElementToRight(self,arr,n):
+def nextSmallerElementToRight(arr,n):
     st=[-1]
     ans=[]
     for i in range(n-1,-1,-1):

@@ -1,0 +1,18 @@
+class Solution:
+    def lenOfLongSubarr (self, arr, n, k) :
+        maxLength = 0
+        currentSum = 0
+        sumMap = {}
+        
+        for i in range(len(arr)):
+            currentSum += arr[i]
+            
+            if currentSum == k:
+                maxLength = max(maxLength, i + 1)
+            
+            if currentSum - k in sumMap:
+                maxLength = max(maxLength, i - sumMap[currentSum - k])
+            
+            if currentSum not in sumMap:
+                sumMap[currentSum] = i
+        return maxLength
